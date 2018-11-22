@@ -5,22 +5,18 @@
     </div>
 </template>
 <script>
-    // 引入组件
-    import siberMenus from '../components/siberMenus'
+// 引入组件
+import siberMenus from "../components/siberMenus";
 
+export default {
+  name: "home",
+  data() {
+    return {};
+  },
 
-    export default{
-        name:"home",
-        data(){
-            return{
-
-            }
-        },
-
-        components:{siberMenus}
-    }
+  components: { siberMenus }
+};
 </script>
 <style scoped>
-
 </style>
 

@@ -17,9 +17,9 @@
             <!-- 登陆 -->
             <div class="login_btn">
                  <el-button  @click="login()" type="primary">
-登陆    
+登陆
                         <!-- <router-link :to="urlData.home">登陆</router-link> -->
-                
+
 
                  </el-button>
             </div>
