@@ -10,22 +10,20 @@
     </div>
 </template>
 <script>
-    // 引入组件
-    import siberMenus from '../components/siberMenus'
+// 引入组件
+import siberMenus from "../components/siberMenus";
 
+export default {
+  name: "home",
+  data() {
+    return {};
+  },
 
-    export default{
-        name:"home",
-        data(){
-            return{
-
-            }
-        },
-
-        components:{siberMenus}
-    }
+  components: { siberMenus }
+};
 </script>
 <style scoped>
+<<<<<<< HEAD
     .siber{
         width: 200px;
         float: left;
@@ -40,5 +38,7 @@
         text-align: center;
         font-size: 28px
     }
+=======
+>>>>>>> 822c371b34a49511ab1935753043d07b133b526e
 </style>
 

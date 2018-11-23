@@ -16,8 +16,16 @@
             </div>
             <!-- 登陆 -->
             <div class="login_btn">
+              // hi
                  <el-button  @click="login()" type="primary">
+<<<<<<< HEAD
                             登陆       
+=======
+登陆
+                        <!-- <router-link :to="urlData.home">登陆</router-link> -->
+
+
+>>>>>>> 822c371b34a49511ab1935753043d07b133b526e
                  </el-button>
             </div>
             <!-- 其他登陆方式 -->
@@ -38,6 +46,7 @@
     </div>
 </template>
 <script>
+<<<<<<< HEAD
     export default{
         name:"login",
         data(){
@@ -76,98 +85,147 @@
 
             }
         }
+=======
+export default {
+  name: "login",
+  data() {
+    return {
+      labelPosition: "right",
+      formLabelAlign: {
+        name: "",
+        region: "",
+        type: ""
+      },
+      urlData: {
+        home: "/home"
+      }
+    };
+  },
+  methods: {
+    login() {
+      const self = this;
+      const userName = document.getElementsByClassName("user_input")[0]
+        .children[0].value;
+      const userWorld = document.getElementsByClassName("user_world")[0]
+        .children[0].value;
+      console.log(userName);
+      console.log(userWorld);
+      const params = {
+        name: userName,
+        password: userWorld
+      };
+      console.log(params);
+      this.$axios
+        .post("/shopping/vuelogin", params)
+        .then(function(response) {
+          console.log(response.data.result);
+          if (response.data.result == "true") {
+            self.$router.push("/home");
+          } else {
+            alert("用户信息异常");
+          }
+        })
+        .catch(function(error) {
+          alert(error);
+        });
+>>>>>>> 822c371b34a49511ab1935753043d07b133b526e
     }
+  }
+};
 </script>
 <style scoped>
-    .box{
-        background-image:url(../assets/login.jpg);
-        background-size: cover;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: -1;
-    }
-    .tit{
-        color: #ffffff;
-        font-size: 38px;
-        font-weight: 100;
-        line-height: 50px;
-        text-align: center;
-        margin-top: 8%;
-    }
-    .user_input{
-        width: 30%;
-    }
-    .passworld_input{
-        width: 34.8%;
-    }
-    .user_box{
-        margin-left: 38%;
-        color: #000;
-        margin-top: 5%
-    }
-    .login_btn{
-        margin-top: 2%;
-        margin-left: 56%
-    }
-    .text_style{
-        font-size: 20px;
-        font-weight: 300;
-        color: #555;
-        line-height: 30px;
-        text-align: center
-    }
-    .other_box{
-        margin-top: 3%;
-    }
-    .other_btn{
-        width: 100%;
-        margin-left: 43%;
-        margin-top: 30px;
-    }
-    .btn{
-         background: url(../assets/qywx.jpg);
-        display: inline-block;
-        width: 80px;
-        height: 80px;
-        float: left;
-        margin-right: 20px;
-    }
-    .zhuyi{
-        margin-top: 100px;
-    }
-    .bt3{
-        background-size: 100%;
-        background-repeat: no-repeat;
-        display: inline-block;
-        height: 80px;
-        width: 80px;
-        margin: 5px;
-        text-align: center;
-        line-height: 66px;
-        background: #a3140d;
-        border: 1px solid #a3140d;
-        font-size: 16px;
-        color: #fff;
-        -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;
-    }
-    .bt2{
-        background: url("../assets/qywx.jpg") center 1000%;
-        background-size: cover;
-        text-align: center;
-        height: 80px;
-        width: 80px;
-        border-radius: 50%;
-        -moz-border-radius: 50%; -webkit-border-radius: 50%;
-    }
-    .bt1{
-        background: url("../assets/wx.png") center 1000%;
-        background-size: cover;
-        text-align: center;
-        height: 80px;
-        width: 80px;
-        border-radius: 50%;
-        -moz-border-radius: 50%; -webkit-border-radius: 50%;
-    }
-
+.box {
+  background-image: url(../assets/login.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.tit {
+  color: #ffffff;
+  font-size: 38px;
+  font-weight: 100;
+  line-height: 50px;
+  text-align: center;
+  margin-top: 8%;
+}
+.user_input {
+  width: 30%;
+}
+.passworld_input {
+  width: 34.8%;
+}
+.user_box {
+  margin-left: 38%;
+  color: #000;
+  margin-top: 5%;
+}
+.login_btn {
+  margin-top: 2%;
+  margin-left: 56%;
+}
+.text_style {
+  font-size: 20px;
+  font-weight: 300;
+  color: #555;
+  line-height: 30px;
+  text-align: center;
+}
+.other_box {
+  margin-top: 3%;
+}
+.other_btn {
+  width: 100%;
+  margin-left: 43%;
+  margin-top: 30px;
+}
+.btn {
+  background: url(../assets/qywx.jpg);
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin-right: 20px;
+}
+.zhuyi {
+  margin-top: 100px;
+}
+.bt3 {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+  margin: 5px;
+  text-align: center;
+  line-height: 66px;
+  background: #a3140d;
+  border: 1px solid #a3140d;
+  font-size: 16px;
+  color: #fff;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.bt2 {
+  background: url("../assets/qywx.jpg") center 1000%;
+  background-size: cover;
+  text-align: center;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.bt1 {
+  background: url("../assets/wx.png") center 1000%;
+  background-size: cover;
+  text-align: center;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
 </style>
