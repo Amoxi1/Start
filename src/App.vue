@@ -22,8 +22,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 
-
+    .siber{
+        width: 200px;
+        float: left;
+        margin-right: 20px;
+    }
+    .content{
+        width: 85%;
+        float: left;
+    }
 
 </style>

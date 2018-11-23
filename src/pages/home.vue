@@ -1,7 +1,12 @@
 <template>
     <div>
         <!-- 侧边框 -->
-        <siberMenus></siberMenus>
+        <div class="siber">
+            <siberMenus ></siberMenus>
+        </div>
+        <div class="content">
+            <h2 class="tit">欢迎使用EBO系统</h2>
+        </div>
     </div>
 </template>
 <script>
@@ -21,6 +26,19 @@
     }
 </script>
 <style scoped>
-
+    .siber{
+        width: 200px;
+        float: left;
+        margin-right: 20px;
+    }
+    .content{
+        width: 85%;
+        float: left;
+    }
+    .tit{
+        width: 100%;
+        text-align: center;
+        font-size: 28px
+    }
 </style>
 

@@ -10,17 +10,14 @@
                         <el-input class="user_input" v-model="formLabelAlign.name"></el-input>
                     </el-form-item>
                     <el-form-item class="passworld_input" label="密码:">
-                        <el-input class="user_world" v-model="formLabelAlign.region"></el-input>
+                        <el-input type="password" class="user_world" v-model="formLabelAlign.region"></el-input>
                     </el-form-item>
                 </el-form>
             </div>
             <!-- 登陆 -->
             <div class="login_btn">
                  <el-button  @click="login()" type="primary">
-登陆    
-                        <!-- <router-link :to="urlData.home">登陆</router-link> -->
-                
-
+                            登陆       
                  </el-button>
             </div>
             <!-- 其他登陆方式 -->
@@ -61,23 +58,19 @@
                 const self = this;
                 const userName = document.getElementsByClassName("user_input")[0].children[0].value;
                 const userWorld = document.getElementsByClassName("user_world")[0].children[0].value;
-                console.log(userName)
-                console.log(userWorld)
                 const params = {
                     "name":userName,
                     "password":userWorld
                 };
-                console.log(params)
                 this.$axios.post("/shopping/vuelogin", params)
                 .then(function (response) {
-                    console.log(response.data.result)
                     if(response.data.result=='true'){
                         self.$router.push('/home')
                     }else{
                       alert("用户信息异常")
                     }
                 })
-                .catch(function (error) {
+                .catch(function (error){
                 　　alert(error);
                 });
 
