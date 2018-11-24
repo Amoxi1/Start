@@ -1,9 +1,5 @@
 <template>
     <div>
-           <!-- 侧边菜单 -->
-        <div class="siber">
-            <siberMenus ></siberMenus>
-        </div>
         <!-- 内容区域 -->
         <div class="content">
             <h2 class="tit2">商机管理</h2>
@@ -11,7 +7,7 @@
              <el-button type="primary" size="small">我的星标项目</el-button>
              <el-button type="primary" size="small">汇总</el-button>
              <el-button type="primary" size="small">导出当前页</el-button>
-            
+
             <el-input class="search_input" v-model="input" placeholder="请输入内容" size="small"></el-input>
              <el-button type="primary" size="small" @click="search(input)">搜索</el-button>
             <template>
@@ -42,81 +38,69 @@
     </div>
 </template>
 <script>
-       // 引入组件
-    import siberMenus from '../components/siberMenus'
-
-
-    export default{
-        // 方法
-         methods:{
-            handleClick(tab, event) {},
-            handleEdit(index, row) {},
-            handleDelete(index, row) {},
-            search(input){
-                console.log(input)
-            }
-            
-            },
-            
-         // 数据
-        data(){
-            return {
-                 datas1:[],
-                 clist1:[],
-                 allData:[],
-                 activeName: 'first',
-                 input:''
-                
-            }
-        },
-    
-        mounted(){
-            const data = {"page":"商机管理","pageNo":1,"pageSize":-1,"leaderList":[],"statusList":[],"star":"","viewId":""};
-                this.$axios.post("/shopping/findAllCRM",data)
-                .then(res =>{
-                    console.log(res)
-                    this.datas1 = res.data.pageData.data,
-                    this.clist1 = res.data.mapList.clist,
-                    this.allData = res.mapList,
-                    console.log(res.data.mapList.clist)
-                    console.log(res.data.pageData.data)
-                })
-                .catch(error =>{
-                  console.log(error)
-                })
-          
-               
-
-            // this.$axios("/shopping/findAllCRM/"+data)
-            // .then(res => {
-            //     console.log(res);
-            //     // this.menus = res.data.pageData.data;
-            //     // console.log(res.data.pageData.data)
-            // })
-            // .catch(error => {
-            //     console.log(error)
-            // })
-        },
-         components:{siberMenus}
+export default {
+  // 数据
+  data() {
+    return {
+      datas1: [],
+      clist1: [],
+      allData: [],
+      activeName: "first",
+      input: ""
+    };
+  },
+  mounted() {
+    const data = {
+      page: "商机管理",
+      pageNo: 1,
+      pageSize: -1,
+      leaderList: [],
+      statusList: [],
+      star: "",
+      viewId: ""
+    };
+    this.$axios
+      .post("/shopping/findAllCRM", data)
+      .then(res => {
+        console.log(res);
+        (this.datas1 = res.data.pageData.data),
+          (this.clist1 = res.data.mapList.clist),
+          (this.allData = res.mapList),
+          console.log(res.data.mapList.clist);
+        console.log(res.data.pageData.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  },
+  // 方法
+  methods: {
+    handleClick(tab, event) {},
+    handleEdit(index, row) {},
+    handleDelete(index, row) {},
+    search(input) {
+      console.log(input);
     }
+  }
+};
 </script>
 <style scoped>
-    .siber{
-        width: 200px;
-        float: left;
-        margin-right: 20px;
-    }
-    .content{
-        width: 85%;
-        float: left;
-    }
-    .tit2{
-        width: 100%;
-        text-align: center;
-        font-size: 22px
-    }
-    .search_input{
-        width: 15%;
-    }
+.siber {
+  width: 200px;
+  float: left;
+  margin-right: 20px;
+}
+.content {
+  width: 85%;
+  float: left;
+}
+.tit2 {
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+}
+.search_input {
+  width: 15%;
+}
 </style>
 

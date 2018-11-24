@@ -16,16 +16,11 @@
             </div>
             <!-- 登陆 -->
             <div class="login_btn">
-              // hi
+
                  <el-button  @click="login()" type="primary">
-<<<<<<< HEAD
-                            登陆       
-=======
-登陆
-                        <!-- <router-link :to="urlData.home">登陆</router-link> -->
+        登陆
 
 
->>>>>>> 822c371b34a49511ab1935753043d07b133b526e
                  </el-button>
             </div>
             <!-- 其他登陆方式 -->
@@ -46,46 +41,6 @@
     </div>
 </template>
 <script>
-<<<<<<< HEAD
-    export default{
-        name:"login",
-        data(){
-            return{
-                   labelPosition: 'right',
-                    formLabelAlign: {
-                    name: '',
-                    region: '',
-                    type: ''
-                    },
-                    urlData:{
-                        home:"/home"
-                    },
-            }
-        },
-        methods:{
-            login(){
-                const self = this;
-                const userName = document.getElementsByClassName("user_input")[0].children[0].value;
-                const userWorld = document.getElementsByClassName("user_world")[0].children[0].value;
-                const params = {
-                    "name":userName,
-                    "password":userWorld
-                };
-                this.$axios.post("/shopping/vuelogin", params)
-                .then(function (response) {
-                    if(response.data.result=='true'){
-                        self.$router.push('/home')
-                    }else{
-                      alert("用户信息异常")
-                    }
-                })
-                .catch(function (error){
-                　　alert(error);
-                });
-
-            }
-        }
-=======
 export default {
   name: "login",
   data() {
@@ -128,7 +83,6 @@ export default {
         .catch(function(error) {
           alert(error);
         });
->>>>>>> 822c371b34a49511ab1935753043d07b133b526e
     }
   }
 };

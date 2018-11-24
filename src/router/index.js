@@ -1,28 +1,28 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/pages/login'
-import Home from '@/pages/home'
-import Mocrm from '@/pages/mocrm'
-
+import Layout from '../components/Layout'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
-      name: 'Login',
       component: Login
+    }, {
+      path: '/home',
+      component: Layout,
+      children: [{
+        path: '',
+        component: () => import('../pages/home')
+      }]
     },
     {
-      path:'/home',
-      name:'Home',
-      component:Home,
-
-    },
-    {
-      path:'/mocrm',
-      name:'Mocrm',
-      component:Mocrm,
+      path: '/mocrm',
+      component: Layout,
+      children: [{
+        path: '',
+        component: () => import('../pages/mocrm')
+      }]
     }
   ]
 })
